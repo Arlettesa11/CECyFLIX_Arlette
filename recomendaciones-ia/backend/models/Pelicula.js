@@ -26,4 +26,5 @@ const peliculaSchema = new mongoose.Schema({
 }, { collection: 'peliculas' }); // 🔴 AQUÍ está la corrección clave
 
 // Exporta el modelo
-module.exports = mongoose.model('Pelicula', peliculaSchema);
+// 👇 Fuerza el nombre de la colección 'peliculas' y la base de datos correcta si fuera necesario
+module.exports = mongoose.model('Pelicula', peliculaSchema,'peliculas');
