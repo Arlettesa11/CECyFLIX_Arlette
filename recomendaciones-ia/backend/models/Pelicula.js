@@ -23,7 +23,7 @@ const peliculaSchema = new mongoose.Schema({
     type: String,
     required: true
   }
-});
+}, { collection: 'peliculas' }); // 🔴 AQUÍ está la corrección clave
 
-// Cierra la definición del esquema
+// Exporta el modelo
 module.exports = mongoose.model('Pelicula', peliculaSchema);

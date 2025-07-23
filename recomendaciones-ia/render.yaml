@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: backend-cecyflix
+    runtime: node # ✅ Reemplaza 'env: node'
+    plan: free
+    region: oregon
+    buildCommand: npm install
+    startCommand: node index.js
+    rootDir: backend
+    envVars:
+      - key: MONGODB_URI
+        value: tu_URI_de_MongoDB_Atlas
+      - key: OPENROUTER_API_KEY
+        value: tu_API_KEY_de_OpenRouter
+

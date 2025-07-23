@@ -12,7 +12,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
+// Se sustituye: const PORT = 4000;
 
 // ✅ Conexión a MongoDB Atlas (sustituye a la llamada a ./db)
 mongoose.connect(process.env.MONGODB_URI)
