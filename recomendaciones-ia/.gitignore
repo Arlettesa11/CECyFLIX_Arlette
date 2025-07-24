@@ -7,7 +7,7 @@ frontend/node_modules/
 .env
 
 # Evita archivos de build (para frontend ya compilado)
-frontend/build/
+#frontend/build/
 
 # Otros comunes
 .DS_Store
