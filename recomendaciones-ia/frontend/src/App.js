@@ -44,7 +44,8 @@ function App() {
     try {
       const todas = window._todasPeliculas || [];
 
-      const response = await fetch('/api/recomendaciones', {
+      const response = await fetch('https://backend-cecyflix.onrender.com/api/recomendaciones', {
+      //const response = await fetch('/api/recomendaciones', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
