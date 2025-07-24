@@ -9,7 +9,14 @@ require('dotenv').config();
 const rutasPeliculas = require('./routes/peliculas');
 
 const app = express();
-app.use(cors());
+
+const corsOptions = {
+  origin: 'https://frontend-cecyflix.onrender.com',
+  methods: ['GET', 'POST'],
+  credentials: true
+};
+app.use(cors(corsOptions));
+//app.use(cors());
 app.use(express.json());
 
 const PORT = process.env.PORT || 4000;
