@@ -43,11 +43,20 @@ app.post('/api/recomendaciones', async (req, res) => {
     );
 
     const recomendacion = response.data.choices[0].message.content;
+    console.log('✅ Recomendación obtenida:', recomendacion);
     res.json({ recomendacion });
 
   } catch (error) {
-    console.error('❌ Error en la API:', error.response?.data || error.message);
-    res.status(500).json({ error: 'Error en el servidor proxy' });
+     console.error('❌ Error al llamar a OpenRouter API:');
+    if (error.response) {
+      console.error('Status:', error.response.status);
+      console.error('Data:', error.response.data);
+    } else {
+      console.error('Error:', error.message);
+    }
+     res.status(500).json({ error: 'Error en el servidor proxy' });
+    //console.error('❌ Error en la API:', error.response?.data || error.message);
+    //res.status(500).json({ error: 'Error en el servidor proxy' });
   }
 });
 
